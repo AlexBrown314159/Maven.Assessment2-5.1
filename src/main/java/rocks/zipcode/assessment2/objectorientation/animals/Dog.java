@@ -13,4 +13,3 @@ public class Dog extends Woofer {
         return "Woof!\nWoof!";
     }
 }
-//   Inherites

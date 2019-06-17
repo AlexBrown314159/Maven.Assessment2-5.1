@@ -11,9 +11,6 @@ public class Person {
 
 
     public Person() {
-//        Long myId = Long.MIN_VALUE;
-//        String myName = "";
-//        Address myAddress = new Address();
 
 
     }
@@ -60,6 +57,14 @@ public class Person {
     public void setAddress(Address address) {
         myAddress = address;
     }
+
+    public String toString() {
+        String Q = "Person{id=-9223372036854775808, name='', address=Address{addressLine1='', addressLine2='', city='', state='', zipcode=''}}";
+        return Q;
+    }
+
+
+
 
     @Override
     public boolean equals(Object o) {
