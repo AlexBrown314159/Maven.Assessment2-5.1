@@ -7,7 +7,18 @@ package rocks.zipcode.assessment2.objectorientation;
 public class Person {
     Long myId = Long.MIN_VALUE;
     String myName = "";
-    Address myAddress;
+    Address myAddress = new Address();
+
+
+    public Person() {
+//        Long myId = Long.MIN_VALUE;
+//        String myName = "";
+//        Address myAddress = new Address();
+
+
+    }
+
+
 
     /**
      * @param id - id of person
@@ -16,13 +27,12 @@ public class Person {
      */
     public Person(Long id, String name, Address address) {
         myId = id;
-        String myName = name;
-        Address myAddress = address;
+        myName = name;
+        myAddress = address;
 
     }
 
-    public Person() {
-    }
+
 
     public Long getId() {
         Long Q = myId;

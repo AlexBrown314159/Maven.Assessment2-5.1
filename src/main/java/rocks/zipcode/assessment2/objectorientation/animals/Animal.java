@@ -8,6 +8,9 @@ import rocks.zipcode.assessment2.objectorientation.Person;
  * @ATTENTION_TO_STUDENTS - Ensure that you have completed the `Person` class before attempting this class.
  */
 public class Animal {
+    Long myId = Long.MIN_VALUE;
+    Person myOwner = new Person();
+
     public Animal() {
     }
 
@@ -16,23 +19,30 @@ public class Animal {
      * @param owner - owner of animal
      */
     public Animal(Long id, Person owner) {
+        myId = id;
+        myOwner = owner;
     }
 
     public Long getId() {
-        return null;
+        Long Q = myId;
+        return myId;
     }
 
     public void setId(Long id) {
+        myId = id;
     }
 
     public Person getOwner() {
-        return null;
+        Person Q = myOwner;
+        return Q;
     }
 
     public void setOwner(Person owner) {
+        myOwner = owner;
     }
 
     public Address getAddress() {
-        return null;
+        Address Q = new Address();
+        return Q;
     }
 }
