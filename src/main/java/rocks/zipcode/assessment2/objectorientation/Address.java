@@ -1,17 +1,25 @@
 package rocks.zipcode.assessment2.objectorientation;
 
+import java.util.Objects;
+
 /**
  * @author leon on 28/11/2018.
  */
 public class Address {
-    String a1 = "";
-    String a2 = "";
-    String c1 = "";
-    String s1 = "";
-    String z1 = "";
 
+        private String addressLine1;
+        private String addressLine2;
+        private String city;
+        private String state;
+        private String zipcode;
 
     public Address() {
+
+        this.addressLine1 = ("");
+        this.addressLine2 = ("");
+        this.city = ("");
+        this.state = ("");
+        this.zipcode = ("");
 
     }
 
@@ -24,63 +32,81 @@ public class Address {
      */
     public Address(String addressLine1, String addressLine2, String city, String state, String zipcode) {
 
-        a1 = addressLine1;
-        a2 = addressLine2;
-        c1 = city;
-        s1 = state;
-        z1 = zipcode;
+        this.addressLine1 = (addressLine1);
+        this.addressLine2 = (addressLine2);
+        this.city = (city);
+        this.state = (state);
+        this.zipcode = (zipcode);
 
     }
 
-
     public String getAddressLine1() {
-        String q = a1;
-        return q;
+        return addressLine1;
     }
 
     public void setAddressLine1(String addressLine1) {
-        this.a1 = addressLine1;
+        this.addressLine1 = addressLine1;
     }
 
     public String getAddressLine2() {
-        String q=a2;
-        return q;
+        return addressLine2;
     }
 
     public void setAddressLine2(String addressLine2) {
-        this.a2 = addressLine2;
+        this.addressLine2 = addressLine2;
     }
 
     public String getCity() {
-        String q=c1;
-        return q;
+        return city;
     }
 
     public void setCity(String city) {
-        this.c1 = city;
+        this.city = city;
     }
 
     public String getState() {
-        String q=s1;
-        return q;
+        return state;
     }
 
     public void setState(String state) {
-        this.s1 = state;
+        this.state = state;
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "addressLine1='" + addressLine1 + '\'' +
+                ", addressLine2='" + addressLine2 + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", zipcode='" + zipcode + '\'' +
+                '}';
     }
 
     public String getZipcode() {
-        String q=z1;
-        return q;
+        return zipcode;
     }
 
     public void setZipcode(String zipcode) {
-        this.z1 = zipcode;
+        this.zipcode = zipcode;
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(addressLine1, addressLine2, city, state, zipcode);
     }
 
     @Override
     public boolean equals(Object o) {
-        return (Boolean)null;
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Address address = (Address) o;
+        return Objects.equals(addressLine1, address.addressLine1) &&
+                Objects.equals(addressLine2, address.addressLine2) &&
+                Objects.equals(city, address.city) &&
+                Objects.equals(state, address.state) &&
+                Objects.equals(zipcode, address.zipcode);
     }
 }
+
+

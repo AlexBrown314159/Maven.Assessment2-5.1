@@ -1,17 +1,21 @@
 package rocks.zipcode.assessment2.objectorientation;
 
+import java.util.Objects;
+
 /**
  * @author leon on 28/11/2018.
  * @ATTENTION_TO_STUDENTS - Ensure that you have completed the `Address` class before attempting this class
  */
 public class Person {
-    Long myId = Long.MIN_VALUE;
-    String myName = "";
-    Address myAddress = new Address();
+    private Long id;
+    private String name;
+    private Address address;
 
 
     public Person() {
-
+        this.id = Long.MIN_VALUE;
+        this.name = "";
+        this.address = new Address();
 
     }
 
@@ -23,51 +27,61 @@ public class Person {
      * @param address - address of person
      */
     public Person(Long id, String name, Address address) {
-        myId = id;
-        myName = name;
-        myAddress = address;
+        this.id = id;
+        this.name = name;
+        this.address = address;
 
     }
 
 
 
     public Long getId() {
-        Long Q = myId;
-        return Q;
+        return id;
     }
 
     public void setId(Long id) {
-        myId = id;
+        this.id = id;
     }
 
     public String getName() {
-        String Q = myName;
-        return Q;
+        return name;
     }
 
     public void setName(String name) {
-        myName = name;
+        this.name = name;
     }
 
     public Address getAddress() {
-        Address Q = myAddress;
-        return Q;
+        return address;
     }
 
     public void setAddress(Address address) {
-        myAddress = address;
+        this.address = address;
     }
-
-    public String toString() {
-        String Q = "Person{id=-9223372036854775808, name='', address=Address{addressLine1='', addressLine2='', city='', state='', zipcode=''}}";
-        return Q;
-    }
-
-
-
 
     @Override
     public boolean equals(Object o) {
-        return (Boolean)null;
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return Objects.equals(id, person.id) &&
+                Objects.equals(name, person.name) &&
+                Objects.equals(address, person.address);
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, address);
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address=" + address +
+                '}';
+    }
+
+
 }

@@ -74,26 +74,28 @@ public class StringUtils {
     public static Boolean isAlphaString(String string) {
 
         Boolean test = true;
-        char letter;
+        Character letter;
 
         for (int i = 0; i < string.length(); i++) {
 
             letter = string.charAt(i);
 
-            if (letter > 'Z') {
-                if (letter < 'a') {
-                    test = false;
+            if (letter == ' ') {
+
+            }
+            else {
+                if ((letter > 'Z') && (letter < 'a')) {
+                    return false;
+                }
+
+                if (letter < 'A') {
+                    return false;
+                }
+
+                if (letter > 'z') {
+                    return false;
                 }
             }
-
-            if (letter < 'A') {
-                test = false;
-            }
-
-            if (letter > 'z') {
-                test = false;
-            }
-
         }
 
         return test;
@@ -154,17 +156,11 @@ public class StringUtils {
                 }
             }
 
-
-
             if (letter >= '0') {
                 if (letter <= '9') {
                     test = false;
                 }
             }
-
-
-
-
 
         }
 
